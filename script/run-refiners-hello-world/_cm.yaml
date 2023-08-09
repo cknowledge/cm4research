@@ -1,0 +1,58 @@
+alias: run-refiners-hello-world
+automation_alias: script
+automation_uid: 5b4e0237da074764
+cache: false
+default_env:
+  CM_VAR1: something
+deps:
+- tags: detect,os
+- names:
+  - python
+  - python3
+  tags: get,python
+- skip_if_env:
+    USE_CUDA:
+    - true
+  tags: get,generic-python-lib,_torch
+- enable_if_env:
+    USE_CUDA:
+    - true
+  tags: get,generic-python-lib,_torch_cuda
+- tags: get,generic-python-lib,_package.numpy
+- tags: get,generic-python-lib,_package.diffusers
+- tags: get,generic-python-lib,_package.transformers
+- tags: get,generic-python-lib,_package.accelerate
+- tags: get,generic-python-lib,_package.jaxtyping
+- tags: get,generic-python-lib,_package.refiners
+- tags: get,git,repo,_repo.https://github.com/finegrain-ai/refiners
+  env:
+    CM_GIT_ENV_KEY: REFINERS
+#- tags: get,huggingface,model,_model-stub.runwayml/stable-diffusion-v1-5
+#  model_filename: v1-5-pruned.ckpt,model_index.json,tokenizer/merges.txt,tokenizer/special_tokens_map.json,tokenizer/tokenizer_config.json,tokenizer/vocab.json
+docker_input_mapping: {}
+input_description: {}
+input_mapping:
+  req: PIP_REQUIREMENTS
+  var1: CM_VAR1
+new_env_keys: []
+new_state_keys: []
+post_deps: []
+posthook_deps: []
+prehook_deps: []
+tags:
+- run
+- python-app
+- refiners
+- hello-world
+- pytorch
+uid: 06a2e6f78e0043e6
+variations:
+  cuda:
+    deps:
+    - tags: get,cuda
+    env:
+      USE_CUDA: true
+  req:
+    env:
+      PIP_REQUIREMENTS: true
+versions: {}
