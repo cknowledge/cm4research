@@ -5,7 +5,7 @@ We are trying to run the [Refiners "Hello World" example](https://github.com/fin
 It currently fails with the following settings:
 * OS: Ubuntu 22.04.2 LTS
 * Python: 3.10.12
-* CUDA 11.5 and 11.8
+* CUDA 11.5.0 and 11.8.0
 * PyTorch CUDA 2.0.0 and 2.0.1
 * Refiners from PYPI: 0.1.0
 
@@ -28,8 +28,6 @@ Install Python virtual env via CM:
 cmr "install python-venv" --name=refiners --version_min=3.10.1
 ```
 
-Tested with CUDA 11.8.0 and PyTorch 2.0.1
-
 Get CUDA 11.8.0 via CM:
 ```bash
 cmr "get cuda" --version=11.8.0
@@ -40,7 +38,7 @@ Get PyTorch CUDA 2.0.1:
 cmr "get generic-python-lib _torch_cuda" --version=2.0.1
 ```
 
-Get Refiners Python library 0.0.1:
+Get Refiners Python library 0.1.0:
 ```bash
 cmr "get generic-python-lib _package.refiners" --version=0.1.0
 ```
