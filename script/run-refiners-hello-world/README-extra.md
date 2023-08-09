@@ -1,6 +1,11 @@
-# CM script
+# Reproducibility report automated by CM
 
-Install [CM automation language]().
+We are trying to run the [Refiners "Hello World" example](https://github.com/finegrain-ai/refiners#getting-started).
+It currently fails.
+
+Steps to reproduce:
+
+Install [CM automation language](https://github.com/mlcommons/ck/blob/master/docs/installation.md).
 
 Pull main CM automations:
 ```bash
@@ -39,6 +44,8 @@ Run refiner's "Hello World" example:
 ```bash
 cmr "run python-app refiners hello-world _cuda" --adr.python.name=refiners
 ```
+
+# Log
 
 It fails at the moment with the following log:
 ```bash
