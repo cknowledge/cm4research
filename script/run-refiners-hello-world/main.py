@@ -1,6 +1,8 @@
 # Taken from https://github.com/finegrain-ai/refiners
 # LICENSE: MIT
 
+import os
+
 if __name__ == "__main__":
 
     from refiners.foundationals.latent_diffusion import StableDiffusion_1
@@ -17,7 +19,8 @@ if __name__ == "__main__":
     lora_weights = LoraWeights("pokemon_lora.safetensors", device=sd15.device)
     lora_weights.patch(sd15, scale=1.0)
 
-    prompt = "a cute cat"
+    x=os.environ.get('CM_REFINERS_PROMPT','')
+    prompt = "a cute cat" if x=='' else x
 
     with torch.no_grad():
         clip_text_embedding = sd15.compute_text_embedding(prompt)
@@ -26,6 +29,8 @@ if __name__ == "__main__":
 
     manual_seed(2)
     x = torch.randn(1, 4, 64, 64, device=sd15.device)
+
+    output=os.environ['CM_REFINERS_OUTPUT_FILE']
 
     with torch.no_grad():
         for step in sd15.steps:
@@ -36,6 +41,6 @@ if __name__ == "__main__":
                 condition_scale=7.5,
             )
         predicted_image = sd15.lda.decode_latents(x)
-        predicted_image.save("pokemon_cat.png")
+        predicted_image.save(output)
 
-   exit(0)
+    exit(0)
