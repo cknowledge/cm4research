@@ -1,13 +1,19 @@
 # Reproducibility report automated by CM
 
 We are trying to run the [Refiners "Hello World" example](https://github.com/finegrain-ai/refiners#getting-started).
-It currently fails.
+
+It currently fails with the following settings:
+* OS: Ubuntu 22.04.2 LTS
+* Python: 3.10.12
+* CUDA 11.5 and 11.8
+* PyTorch CUDA 2.0.0 and 2.0.1
+* Refiners from PYPI: 0.1.0
 
 Steps to reproduce:
 
 Install [CM automation language](https://github.com/mlcommons/ck/blob/master/docs/installation.md).
 
-Pull main CM automations:
+Pull main repository with CM automation recipes for AI/ML systems:
 ```bash
 cm pull repo mlcommons@ck
 ```
