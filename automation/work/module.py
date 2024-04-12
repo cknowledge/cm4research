@@ -101,7 +101,7 @@ class CAutomation(Automation):
         artifact_obj = parsed_artifact[0] if len(parsed_artifact)>0 else None
         artifact_repo = parsed_artifact[1] if len(parsed_artifact)>1 else None
         
-        target_repo = utils.assemble_cm_object2(artifact_repo) if artifact_repo != None else os.environ.get('CM_AUTOMATION_CK_REPO', '')
+        target_repo = utils.assemble_cm_object2(artifact_repo) if artifact_repo != None else os.environ.get('CM_AUTOMATION_WORK_REPO', '')
 
         artifact = i.get('artifact', '')
 
@@ -144,7 +144,7 @@ class CAutomation(Automation):
         if tags!='':
             extra_tags += tags.split(',')
 
-        x = os.environ.get('CM_AUTOMATION_CK_EXTRA_TAGS', '')
+        x = os.environ.get('CM_AUTOMATION_WORK_EXTRA_TAGS', '')
         if x != '':
             extra_tags += x.split(',')
 
@@ -205,7 +205,7 @@ class CAutomation(Automation):
 
         # Opening CMD
         for p in paths:
-            cmd = os.environ.get('CM_AUTOMATION_CK_CMD', '')
+            cmd = os.environ.get('CM_AUTOMATION_WORK_CMD', '')
             if cmd == '': cmd = 'cd {PATH} ; bash'
 
             cmd = cmd.replace('{PATH}', p)
