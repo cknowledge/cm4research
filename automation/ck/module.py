@@ -104,11 +104,13 @@ class CAutomation(Automation):
         target_repo = utils.assemble_cm_object2(artifact_repo) if artifact_repo != None else os.environ.get('CM_AUTOMATION_CK_REPO', '')
 
         artifact = i.get('artifact', '')
+        j = artifact.find(':')
+        if j>=0:
+            artifact = artifact[j+1:]
 
         tags = i.get('tags', '')
 
         extra_tags = []
-
 
         r = utils.get_current_date_time({})
         if r['return']>0: return r
