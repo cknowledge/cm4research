@@ -137,9 +137,9 @@ class CAutomation(Automation):
                 artifact += '.' + name.replace(' ','-')
 
         if tags == '':
-            tags = input('Input tags for this Collective Knowledge separate dy comma: ')
+            tags = input('Input tags for this Collective Knowledge separate by space: ')
 
-            tags = tags.strip().lower()
+            tags = tags.strip().lower().replace(' ',',')
 
         if tags!='':
             extra_tags += tags.split(',')
