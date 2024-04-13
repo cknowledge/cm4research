@@ -2,3 +2,6 @@ alias: cknowledge@cm4research
 uid: a4926ddefe1948ab
 
 git: true
+
+deps:
+  - name: mlcommons@ck
