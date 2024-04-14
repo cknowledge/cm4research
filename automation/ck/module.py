@@ -141,10 +141,10 @@ class CAutomation(Automation):
         if tags == '':
             tags = input('Input tags for this Collective Knowledge separate by space: ')
 
-            tags = tags.strip().lower().replace(' ',',')
+            tags = tags.strip().lower()
 
         if tags!='':
-            extra_tags += tags.split(',')
+            extra_tags += tags.replace(' ',',').split(',')
 
         x = os.environ.get('CM_AUTOMATION_CK_EXTRA_TAGS', '')
         if x != '':

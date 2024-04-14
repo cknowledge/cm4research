@@ -130,7 +130,7 @@ class CAutomation(Automation):
 
             extra_tags.append(iso_datetime)
 
-            name = input('Input name for this Collective Knowledge or press Enter to use current date: ')
+            name = input('Input name for this Work entry or press Enter to use current date: ')
 
             if name !='':
                 no_name = False
@@ -140,12 +140,12 @@ class CAutomation(Automation):
                 artifact += '.' + name.replace(' ','-')
 
         if tags == '':
-            tags = input('Input tags for this Collective Knowledge separate by space: ')
+            tags = input('Input tags for this Work entry separate by space: ')
 
             tags = tags.strip().lower()
 
         if tags!='':
-            extra_tags += tags.split(',').replace(' ',',')
+            extra_tags += tags.replace(' ',',').split(',')
 
         x = os.environ.get('CM_AUTOMATION_WORK_EXTRA_TAGS', '')
         if x != '':
