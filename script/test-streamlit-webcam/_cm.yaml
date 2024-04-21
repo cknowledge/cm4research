@@ -20,6 +20,8 @@ deps:
       - python3
 
   # May need to use CM in automation recipes
+  - tags: get,generic-python-lib,_package.numpy
+  - tags: get,generic-python-lib,_package.opencv-python
   - tags: get,generic-python-lib,_package.streamlit
   - tags: get,generic-python-lib,_package.streamlit-webrtc
 
