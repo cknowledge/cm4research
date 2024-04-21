@@ -1,3 +1,5 @@
+/* Developer(s): Grigori Fursin */
+
 #include <iostream>
 
 #include "common.h"

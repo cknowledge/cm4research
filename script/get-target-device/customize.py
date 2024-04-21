@@ -1,3 +1,5 @@
+# Developer(s): Grigori Fursin
+
 from cmind import utils
 import os
 import copy

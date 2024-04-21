@@ -1,6 +1,8 @@
 # Taken from https://github.com/finegrain-ai/refiners
 # LICENSE: MIT
 
+# Developer(s): Grigori Fursin
+
 import os
 
 if __name__ == "__main__":

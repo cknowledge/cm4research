@@ -1,3 +1,5 @@
+/* Developer(s): Grigori Fursin */
+
 #include <iostream>
 
 #include <onnxruntime_cxx_api.h>

@@ -1,7 +1,7 @@
 # About
 
-Reproducing different projects using the [MLCommons CM automation language](https://github.com/mlcommons/ck).
+This CM repository is used for:
+* reproducing different projects using the [MLCommons CM automation language](https://github.com/mlcommons/ck).
+* testing new CM scripts (automation recipes).
 
-Supported by [cKnowledge Ltd](https://cKnowledge.org), 
-[cTuning foundation](https://cTuning.org) and 
-[MLCommons](https://github.com/mlcommons/ck/blob/master/docs/taskforce.md).
+Maintained by [cKnowledge Ltd](https://cKnowledge.org) and the [cTuning foundation](https://cTuning.org).
