@@ -5,10 +5,10 @@ Testing MLPerf loadgen
 """
 
 # Import cmind to test break points
-import cmind.utils
 
 import numpy as np
 
+import cmind.utils
 cmind.utils.debug_here(__file__, port=5678, text='Debugging loadgen!', env_debug_uid='a83d9c76755a40af')
 
 print ('- Importing MLPerf loadgen library ...')
